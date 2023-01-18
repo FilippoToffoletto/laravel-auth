@@ -23,7 +23,8 @@ Route::middleware(['auth', 'verified'])
         ->name('admin.')
         ->prefix('admin')
         ->group(function(){
-            Route::get('/',[DashboardController::class, 'index'])->name('admin');
+            //qui mettiamo tutte le rotte della CRUD
+            Route::get('/',[DashboardController::class, 'index'])->name('home');
         });
 
 Route::middleware('auth')->group(function () {
