@@ -1,1 +1,17 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+.main-wrapper{
+    height: calc(100vh - 56px);
+}
+
+.ft-nav-link{
+    color: black;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    list-style: none;
+    a{
+        text-decoration: none;
+        font-style: bold;
+    }
+}
