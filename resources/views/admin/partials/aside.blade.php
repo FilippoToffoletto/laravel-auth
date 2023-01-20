@@ -6,5 +6,8 @@
         <li class="ft-nav-link mt-2">
             <a href="{{ route('admin.projects.index') }}" class="text-dark"><i class="fa-solid fa-diagram-project"></i></i> Projects</a>
         </li>
+        <li class="ft-nav-link mt-2">
+            <a href="{{route('admin.projects.create')}}" class="text-dark"><i class="fa-solid fa-pencil"></i>Nuovo project</a>
+        </li>
     </ul>
 </nav>
