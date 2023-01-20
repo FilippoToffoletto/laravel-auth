@@ -1,8 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
+main{
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+}
+
 .main-wrapper{
     height: calc(100vh - 56px);
 }
+
 
 .ft-nav-link{
     color: black;
@@ -15,6 +21,18 @@
         font-style: bold;
         i{
             margin-right: 2px;
+        }
+    }
+}
+
+
+.table{
+    a{
+        color: black;
+        font-style: none;
+        text-decoration: none;
+        &:hover{
+            color: #FFC009;
         }
     }
 }

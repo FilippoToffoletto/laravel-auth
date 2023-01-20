@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-warning shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}" target="_blank">
             <div class="logo_laravel text-white">
                 Portfolio
             </div>
@@ -15,7 +15,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ url('/')}}">Vedi il sito</a>
+                    <a class="nav-link text-white" href="{{ url('/')}}" target="_blank">Vedi il sito</a>
                 </li>
             </ul>
 

@@ -17,8 +17,18 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
-        return view('admin.projects.index',compact('projects'));
+        $projects = Project::paginate(8);
+        $direction = 'desc';
+        //$projects = Project::all();
+        return view('admin.projects.index',compact('projects', 'direction'));
+    }
+
+    public function orderby($column, $direction){
+
+        $direction = $direction === 'desc' ? 'asc' : 'desc';
+        $projects = Project::orderby($column, $direction)->paginate(8);
+        return view('admin.projects.index',compact('projects', 'direction'));
+
     }
 
     /**
@@ -50,7 +60,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        //return view('admin.projects.show, compact('$project'));
     }
 
     /**
