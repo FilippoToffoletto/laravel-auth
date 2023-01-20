@@ -28,7 +28,9 @@
             <td>{{$project->name}}</td>
             <td>{{$project->client_name}}</td>
             <td>{{$project->summary}}</td>
-            <td>xxx</td>
+            <td>
+                <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+            </td>
         </tr>
         @endforeach
         </tbody>

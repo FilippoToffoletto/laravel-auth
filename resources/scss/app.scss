@@ -25,8 +25,17 @@ main{
     }
 }
 
+.container{
+    img{
+        height: 500px;
+    }
+}
+
 
 .table{
+    i{
+        color: white;
+    }
     a{
         color: black;
         font-style: none;
