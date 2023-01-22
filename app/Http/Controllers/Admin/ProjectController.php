@@ -48,7 +48,15 @@ class ProjectController extends Controller
      */
     public function store(ProjectRequest $request)
     {
-        //
+        $project_data = $request->all();
+        $project_data['slug'] = Project::generateSlug($project_data['name']);
+
+        /*$new_project = new Project();
+        $new_project->fill($project_data);
+        $new_project->save();*/
+        $new_project = Project::create($project_data);
+
+        return redirect()->route('admin.projects.show', $new_project)->with('message','Progetto inserito correttamente');
     }
 
     /**

@@ -24,14 +24,14 @@
     <form action="{{route('admin.projects.store')}}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
+            <label for="name" class="form-label">Nome</label>
             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{old('name')}}" placeholder="Titolo">
             @error('name')
                 <p class="invalid-feedback">{{$message}}</p>
             @enderror
         </div>
         <div class="mb-3">
-            <label for="client_name" class="form-label">Name</label>
+            <label for="client_name" class="form-label">Nome cliente</label>
             <input type="text" class="form-control @error('client_name') is-invalid @enderror" id="client_name" name="client_name" value="{{old('client_name')}}" placeholder="Nome cliente">
             @error('client_name')
                 <p class="invalid-feedback">{{$message}}</p>

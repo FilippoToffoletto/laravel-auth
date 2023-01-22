@@ -5,7 +5,13 @@
 @endsection
 
 @section('content')
-<div class="container mt-3">
+<div class="container mt-3 show-container">
+
+    @if (session('message'))
+        <div class="alert alert-success" role="alert">
+            {{session('message')}}
+        </div>
+    @endif
 
     <h1 class="my-3">{{$project->name}}</h1>
 

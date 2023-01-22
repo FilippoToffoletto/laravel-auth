@@ -27,7 +27,7 @@ main{
 
 .container{
     img{
-        height: 500px;
+        height: 100%;
     }
 }
 
@@ -43,5 +43,11 @@ main{
         &:hover{
             color: #FFC009;
         }
+    }
+}
+
+.show-container{
+    img{
+        width: 40%;
     }
 }
