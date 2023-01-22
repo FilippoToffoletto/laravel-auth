@@ -16,9 +16,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(8);
+        $projects = Project::orderby('id', 'desc')->paginate(8);
         $direction = 'desc';
-        //$projects = Project::all();
         return view('admin.projects.index',compact('projects', 'direction'));
     }
 
@@ -110,6 +109,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('admin.projects.index')->with('deleted','Progetto eliminato correttamente');
+
     }
 }

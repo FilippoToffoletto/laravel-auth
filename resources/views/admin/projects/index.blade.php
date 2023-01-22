@@ -8,6 +8,12 @@
 <div class="container mt-3">
     <h1 class="my-3">Elenco dei projects</h1>
 
+    @if (session('deleted'))
+        <div class="alert alert-danger" role="alert">
+            {{session('deleted')}}
+        </div>
+    @endif
+
 
 
     <table class="table table-striped">
@@ -30,7 +36,13 @@
             <td class="ft-action-btn">
                 <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
                 <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
-                <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                <form
+                onsubmit="return confirm('Confermi l\'eliminazione del post?')"
+                action="{{route('admin.projects.destroy', $project)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button href="{{route('admin.projects.edit', $project)}}" type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                </form>
             </td>
         </tr>
         @endforeach
