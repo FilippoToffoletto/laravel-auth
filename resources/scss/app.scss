@@ -33,8 +33,13 @@ main{
 
 
 .table{
+    .ft-action-btn{
+        display: flex;
+        padding: 25% 10px;
+    }
     i{
         color: white;
+        display: inline-block;
     }
     a{
         color: black;

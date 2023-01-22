@@ -27,8 +27,10 @@
             <td>{{$project->name}}</td>
             <td>{{$project->client_name}}</td>
             <td>{{$project->summary}}</td>
-            <td>
+            <td class="ft-action-btn">
                 <a href="{{route('admin.projects.show', $project)}}" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-warning"><i class="fa-solid fa-pencil"></i></a>
+                <a href="{{route('admin.projects.edit', $project)}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
             </td>
         </tr>
         @endforeach

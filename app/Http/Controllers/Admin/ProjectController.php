@@ -78,7 +78,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -88,9 +88,18 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update( $request, Project $project)
+    public function update(ProjectRequest $request, Project $project)
     {
-        //
+        $project_data = $request->all();
+        if($project_data['name'] != $project->name){
+            $project_data['slug'] = Project::generateSlug($project_data['name']);
+        }else{
+            $project_data['slug'] = $project->slug;
+        }
+
+        $project->update($project_data);
+        return redirect()->route('admin.projects.show', $project)->with('message','Progetto aggioraneto correttamente');
+
     }
 
     /**
