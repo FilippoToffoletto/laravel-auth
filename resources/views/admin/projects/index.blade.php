@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="container mt-3">
-    <h1 class="my-3">Elenco dei projects</h1>
+    <h1 class="my-3">Elenco dei progetti</h1>
 
     @if (session('deleted'))
         <div class="alert alert-danger" role="alert">
@@ -20,9 +20,9 @@
         <thead>
           <tr>
             <th scope="col"><a href="{{route('admin.projects.orderby', ['id', $direction])}}">ID</a></th>
-            <th scope="col"><a href="{{route('admin.projects.orderby', ['name', $direction])}}">Name</a></th>
-            <th scope="col"><a href="{{route('admin.projects.orderby', ['client_name', $direction])}}">ID</a></th>
-            <th scope="col"><a href="{{route('admin.projects.orderby', ['summary', $direction])}}">Summary</a></th>
+            <th scope="col"><a href="{{route('admin.projects.orderby', ['name', $direction])}}">Nome Progetto</a></th>
+            <th scope="col"><a href="{{route('admin.projects.orderby', ['client_name', $direction])}}">Nome Cliente</a></th>
+            <th scope="col"><a href="{{route('admin.projects.orderby', ['summary', $direction])}}">Descrizione</a></th>
             <th scope="col">Azioni</th>
           </tr>
         </thead>
