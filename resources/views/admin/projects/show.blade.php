@@ -18,6 +18,13 @@
 
     <h3>{{$project->client_name}}</h3>
 
+    @if ($project->cover_image)
+        <div>
+            <img src="{{asset('storage/' . $project->image)}}" alt="{{$project->cover_image_original}}">
+            <p><i>{{$project->cover_image_original}}</i></p>
+        </div>
+    @endif
+
     <img src="{{$project->cover_image}}" alt="{{$project->name}}">
 
     <p>{{$project->summary}}</p>

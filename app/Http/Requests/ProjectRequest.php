@@ -35,12 +35,9 @@ class ProjectRequest extends FormRequest
         return[
             'name.required' => 'Il nome e\' obbligatorio',
             'client_name.required' => 'Il nome del cliente e\' obbligatorio',
-            'cover_image.required' => 'L\'URL e\' obbligatoria',
             'name.max' => 'Il puo\' contenere il massimo di 255 caratteri',
-            'cover_image.max' => 'Il puo\' contenere il massimo di 255 caratteri',
             'client_name.max' => 'Il puo\' contenere il massimo di 255 caratteri',
             'name.min' => 'Il puo\' contenere il minimo di 3 caratteri',
-            'cover_image.min' => 'Il puo\' contenere il minimo di 3 caratteri',
             'client_name.min' => 'Il puo\' contenere il minimo di 3 caratteri',
             'summary.required' => 'La descrizione e\' obbligatoria',
             'summary.min' => 'Il puo\' contenere il minimo di 10 caratteri'

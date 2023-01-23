@@ -21,7 +21,7 @@
 
     @endif
 
-    <form action="{{route('admin.projects.store')}}" method="POST">
+    <form action="{{route('admin.projects.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
@@ -38,11 +38,16 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="cover_image" class="form-label">URL Immagine</label>
-            <input type="text" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{old('cover_image')}}" placeholder="URL IMMAGINE">
+            <label for="cover_image" class="form-label">Immagine</label>
+            <input
+            onchange="showimage(event)"
+            type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image" name="cover_image" value="{{old('cover_image')}}" placeholder="URL IMMAGINE">
             @error('cover_image')
                 <p class="invalid-feedback">{{$message}}</p>
             @enderror
+            <div>
+                <img id="output-image" alt="" width="150">
+            </div>
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Descrizione</label>
@@ -56,4 +61,15 @@
 
 
 </div>
+
+<script>
+    function showImage(event){
+        //const tagImage = document.getElementById('output-image');
+        //tagImage.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
+
+
 @endsection
+
+

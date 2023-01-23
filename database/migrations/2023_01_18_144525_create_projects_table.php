@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('client_name',100);
             $table->text('summary')->nullable();
             $table->string('cover_image')->nullable();
+            $table->string('cover_image_original')->nullable();
             $table->timestamps();
         });
     }
